@@ -1,0 +1,38 @@
+
+{% extends 'main/base.html' %}
+
+{% load static%}
+
+{% block content %}
+
+<div class="content" id="result-content" style="display: none;" align="center">
+
+    <label id="run-time">Run time: </label>
+    <label id="accuracy">Root Mean Square Error: </label>
+
+</div>
+
+<div class="loading-bar-area" id="loading-bar-area">
+    {% include 'main/Loading_pages/pdf_cub_loader.html' %}
+</div>
+
+
+
+
+<!--<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>-->
+<script>
+    jQuery(document).ready(function(){
+        $.ajax({
+          url: "/Regression/Processing/",
+        }).done(function(data)
+
+        {
+            $('#loading-bar-area').remove();
+            $('#run-time').append(data["time"].toFixed(2) + ' seconds')
+            $('#accuracy').append(data["rmse"].toFixed(2))
+            $('#result-content').show();
+        });
+    });
+</script>
+
+{% endblock %}

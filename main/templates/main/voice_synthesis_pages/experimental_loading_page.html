@@ -1,0 +1,44 @@
+
+{% extends 'main/base.html' %}
+
+{% block title %}Voice Synthesis{% endblock %}
+
+{% block content %}
+
+<br> <br>
+<br> <br>
+<br> <br>
+<br> <br>
+<h1 align="center">Please be patient as file processes</h1>
+<br> <br>
+
+<form method=post enctype=multipart/form-data align="center">
+
+        <div class="spinner-border text-primary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-border text-secondary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-border text-success" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-border text-danger" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-border text-warning" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-border text-info" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-border text-light" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-border text-dark" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,168 @@
+body{
+  background: #c1c1c1;
+  margin: 0;
+}
+
+.container{
+  width: 150px;
+  height: 170px;
+  position: absolute;
+  top: calc(50% - 85px);
+  left: calc(50% - 75px);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.background{
+  width: 200px;
+  height: 200px;
+  background: #9f9f9f;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 104px);
+  left: calc(50% - 100px);
+  box-shadow: inset 0 0 15px 0px #000;
+}
+
+.gear{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #505050;
+  position: relative;
+  z-index: 10;
+}
+
+.gear1{
+  animation: gear1 10s linear infinite;
+  grid-column: 2;
+  grid-row: 1;
+  grid-row-end: span 2;
+}
+.gear2{
+  animation: gear_reverse1 10s linear infinite;
+  grid-column: 3;
+  grid-row: 2;
+  grid-row-end: span 2;
+
+}
+.gear3{
+  animation: gear2 10s linear infinite;
+  grid-column: 3;
+  grid-row: 4;
+  grid-row-end: span 2;
+
+}
+.gear4{
+  animation: gear_reverse2 10s linear infinite;
+  grid-column: 2;
+  grid-row: 5;
+  grid-row-end: span 2;
+
+}
+.gear5{
+  animation: gear3 10s linear infinite;
+  grid-column: 1;
+  grid-row: 4;
+  grid-row-end: span 2;
+}
+.gear6{
+  animation: gear_reverse3 10s linear infinite;
+  grid-column: 1;
+  grid-row: 2;
+  grid-row-end: span 2;
+}
+
+
+@keyframes gear1{
+  0%{transform: rotate(calc(0deg + 15deg));}
+  100%{transform: rotate(calc(360deg + 15deg));}
+}
+
+@keyframes gear_reverse1{
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(-360deg);}
+}
+
+@keyframes gear2{
+  0%{transform: rotate(calc(0deg + 15deg));}
+  100%{transform: rotate(calc(360deg + 15deg));}
+}
+
+@keyframes gear_reverse2{
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(-360deg);}
+}
+@keyframes gear3{
+  0%{transform: rotate(calc(0deg + 15deg));}
+  100%{transform: rotate(calc(360deg + 15deg));}
+}
+
+@keyframes gear_reverse3{
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(-360deg);}
+}
+
+.tooth{
+  width: 60px;
+  height: 10px;
+  background: #3c3c3c;
+  position: absolute;
+  top: calc(50% - 5px);
+  left: calc(50% - 30px);
+  border-radius: 30%;
+  z-index: 8;
+}
+
+
+.teeth1{transform: rotate(30deg);}
+.teeth2{transform: rotate(60deg);}
+.teeth3{transform: rotate(90deg);}
+.teeth4{transform: rotate(120deg);}
+.teeth5{transform: rotate(150deg);}
+.teeth6{transform: rotate(180deg);}
+
+
+.gear_hole{
+  width: 40px;
+  height: 40px;
+  background: #c1c1c1;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 14;
+  top: calc(50% - 20px);
+  left: calc(50% - 20px);
+}
+
+.hole_structure{
+  width: 22px;
+  height: 2px;
+  background: #505050;
+  position: absolute;
+  top: calc(50% - 1px);
+  left: 50%;
+  transform-origin: left center;
+}
+
+.hole_structure:nth-child(0){
+  transform: rotate(0deg);
+}
+.hole_structure:nth-child(1){
+  transform: rotate(120deg);
+}
+.hole_structure:nth-child(2){
+  transform: rotate(240deg);
+}
+
+.hole_structure_point{
+  width: 10px;
+  height: 10px;
+  background: #c1c1c1;
+  border-radius: 50%;
+  border: 2px solid #505050;
+  position: absolute;
+  z-index: 16;
+  top: calc(50% - 7px);
+  left: calc(50% - 7px);
+}

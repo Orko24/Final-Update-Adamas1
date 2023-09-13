@@ -1,0 +1,106 @@
+so the way loading pages work are as follows:
+
+
+as you start from the initial page, you can indicate that 
+the page will redirect to a page, like a results page 
+(let's call it "results.html" from now on).
+
+When rendering the results page, you may use a div object like 
+
+<div class="loading-bar-area" id="loading-bar-area">
+    {% include 'loading_1.html' %}
+</div>
+
+to include a loading page without having to render it via django
+
+As this is done and the at the bottom of "results.html" you may 
+render ajax javascript to get updated values and change the 
+html to display something else using ajax.
+
+Below you'll see an example as well as a template of what the ajax
+function syntax should look like.
+
+Ajax will load the django url designated 
+$.ajax({url: "/<django.url_function>/",}) and run the accompanying function
+
+In that function you may run any function (like a machine learning model or celery task),
+upon completion of said task you may get results and pass it into you a dictionary which you may 
+declare context
+
+Then dump the context into a json object like: 
+
+context = {"rmse":rmse,"time":time.time()-start_time}
+
+(context template: 
+
+context = {
+    "key_a": value_a (python variable),
+    "key_b": value_b (python variable),
+    .... #similar format continue the dictionary#
+
+            }
+
+)
+
+Dump context into data, same data variable "data" will be 
+
+
+data = json.dumps(context)
+
+and render it with an HTTP resonse like this:
+
+
+return HttpResponse(data,content_type="application/json")
+
+This will modify the HTML using whats in the ajax function, 
+
+done(function(data)
+
+    "code"
+    )
+
+
+see what happens try to redirect to url to a processing.
+
+The following is an example and template of what ajax code is structured like:
+
+
+example:
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $.ajax({url: "/loading/",}).done(function(data)
+
+        {
+            $('#loading-bar-area').remove();
+            $('#run-time').append(data["time"].toFixed(2) + ' seconds')
+            $('#accuracy').append(data["rmse"].toFixed(2))
+            $('#result-content').show();
+        });
+    });
+</script>
+
+template:
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+
+    $(document).ready(function(){
+        $.ajax({url: "/<django.url_function>/",}).done(function(data)
+
+        {
+            code that you would like
+        });
+    });
+
+</script>
+
+
+$(document).ready(function(){
+        $.ajax({url: "/<django.url_function>/",}).done(function(data)
+
+        {
+            code that you would like
+        });
+    });
+
+Look at celery 

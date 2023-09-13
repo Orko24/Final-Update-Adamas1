@@ -1,0 +1,36 @@
+Build an virtual enviornment (preferably conda)
+use torch command and requirements to install all dependencies
+
+run cmd terminals with conda activate <virtual env name>
+
+3 seperate instances of it (windows development env may vary to linux):
+
+1) redis-server
+2) python manage.py runserver
+3) celery -A <"proj_name".celery> worker -l info -P eventlet
+4) rqworker -w rq_win.WindowsWorker
+
+NOTE: in the case for this file:
+
+
+celery -A mysite.celery worker -l info -P eventlet
+
+will work
+
+add concurrency 
+celery -A mysite.celery worker -l info --concurrency=10 -P eventlet
+celery -A mysite.celery worker -l info --concurrency=1 -P eventlet
+
+Use Django RQ for machine learning task, use this template as 
+base to integrate Django RQ Celery Django Redis as well as any external apps designed 
+
+
+unix: python manage.py rqworker default
+
+windows: rqworker -w rq_win.WindowsWorker
+
+To do, integrate them into a linux system later and use a bash file to run everything and terminate 
+everything at once to keep servers streamlined
+
+
+

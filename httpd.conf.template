@@ -1,0 +1,41 @@
+WSGIApplicationGroup %{GLOBAL} # <--- make sure all libraries work
+
+
+# Settings to add to C:/Apache24/conf/httpd.conf
+# update as needed
+
+#
+# ServerName gives the name and port that the server uses to identify itself.
+# This can often be determined automatically, but we recommend you specify
+# it explicitly to prevent problems during startup.
+#
+# If your host doesn't have a registered DNS name, enter its IP address here.
+#
+# ServerName localhost:80 # use this if you're running this on a VirtualBox VM or PC
+# ServerName 34.168.205.145:80
+ServerName www.adamasaudio.com:80
+
+
+LoadFile "C:/Anaconda3/python39.dll"
+LoadModule wsgi_module "C:/Anaconda3/lib/site-packages/mod_wsgi/server/mod_wsgi.cp39-win_amd64.pyd"
+WSGIPythonHome "C:/Anaconda3"
+
+<VirtualHost *:80>
+
+    # Django Project
+
+    Alias /static "C:/Adamas_final/main/static/"
+    <Directory "C:/Adamas_final/main/static/">
+        Require all granted
+    </Directory>
+
+
+
+    WSGIScriptAlias / "C:/Adamas_final/mysite/wsgi.py"
+    <Directory "C:/Adamas_final/mysite">
+        <Files "wsgi.py">
+                Require all granted
+        </Files>
+    </Directory>
+
+</VirtualHost>

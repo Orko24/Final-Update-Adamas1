@@ -1,0 +1,47 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="15">
+            <item index="0" class="java.lang.String" itemvalue="django-crispy-forms" />
+            <item index="1" class="java.lang.String" itemvalue="Django" />
+            <item index="2" class="java.lang.String" itemvalue="pytz" />
+            <item index="3" class="java.lang.String" itemvalue="Pillow" />
+            <item index="4" class="java.lang.String" itemvalue="pytest" />
+            <item index="5" class="java.lang.String" itemvalue="pytest-django" />
+            <item index="6" class="java.lang.String" itemvalue="redis" />
+            <item index="7" class="java.lang.String" itemvalue="celery" />
+            <item index="8" class="java.lang.String" itemvalue="amqp" />
+            <item index="9" class="java.lang.String" itemvalue="kombu" />
+            <item index="10" class="java.lang.String" itemvalue="vine" />
+            <item index="11" class="java.lang.String" itemvalue="django-rq" />
+            <item index="12" class="java.lang.String" itemvalue="poppler-utils" />
+            <item index="13" class="java.lang.String" itemvalue="moviepy" />
+            <item index="14" class="java.lang.String" itemvalue="numpy" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N801" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="Final_Test.backtester1.file" />
+          <option value="Final_Test.backtester1.general_predictions_v11" />
+          <option value="mysite.main.Website.website.aud_merger.vo_prod2" />
+          <option value="mysite.main.Website.conv_audio.vo_prod2" />
+          <option value="mysite.vo_prod2" />
+          <option value="mysite.main.Website.database_dev_env.database_dev_env" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

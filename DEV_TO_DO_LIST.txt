@@ -1,0 +1,4 @@
+1) Put upload limits to the site
+2) Fix HTML for darrell
+3) Fix backend temp.pdf location and make sure its a permanent fix,
+   so the cleaning software can target said folder and clean it after every run

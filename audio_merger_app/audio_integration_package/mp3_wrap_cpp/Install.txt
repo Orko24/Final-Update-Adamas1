@@ -1,0 +1,45 @@
+-------------------------------------------------------------------------------
+		 INSTALLING INFORMATIONS FOR WINDOWS VERSION
+-------------------------------------------------------------------------------
+
+The easiest way to get your mp3wrap installed is to copy just the file mp3wrap.exe
+(included in package) in Windows main directory (usually C:\WINDOWS).
+
+Or, for more experienced users: you can extract mp3wrap.exe in another directory
+and then add that directory to PATH environment.
+
+  IMPORTANT NOTE: MP3WRAP IS A TEXTUAL UTILITY. TO RUN USE MS-DOS PROMPT!
+
+  For people who don't know how to use ms-dos prompt:
+  - First copy mp3wrap.exe as described before.
+  - Run MS-DOS prompt in Start Menu -> Accessories
+    or just Choose Start -> Run... then type
+    command
+  - You will have a black window writing C:\WINDOWS or something similar.
+  - Now you have just to move to directory where mp3 are using 'cd' command:
+	cd X:\directory1\directory2\mp3\mymp3\
+    where X is the the drive (for example C or D)
+  - Ok, now just type
+    mp3wrap
+    you will se an help message on how to use mp3wrap.
+
+  From this point you will be able to use mp3wrap correctly.
+  Please read man.html and faq.html for a complete documentation and example of use.
+
+  I know, you are thinking all this is too difficult. This is not true, listen me;
+  I can assure that once you get experienced using this program you will be really
+  fast. Is faster to open a window program, selecting all files to open, select
+  output file and then start, or instead to write only: mp3wrap out.mp3 *.mp3 ?? ;)
+  However don't worry, I will try to write a Graphic Interface as soon as possible.
+
+COMPILING INFORMATIONS
+
+In package you will already find a binary of Mp3Wrap (mp3wrap.exe).
+It has been compiled with MingW v. 2.0.0.
+However, to compile you can compile it using Visual C or any other
+compilers. Remember to compile also getopt.c, included in package.
+
+To compile using MingW or any gcc compatible applications type
+
+	gcc -o mp3wrap *.c
+

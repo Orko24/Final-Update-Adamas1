@@ -1,0 +1,2 @@
+virtualenv==20.16.6
+mod-wsgi==4.9.4

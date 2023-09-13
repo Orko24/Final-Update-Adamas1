@@ -1,0 +1,152 @@
+
+{% extends 'main/experimental_base.html' %}
+
+{% block title %} Voice Synthesis {% endblock %}
+
+{% load static%}
+
+{% block content %}
+
+<div class="content" id="result-content" style="display: none;" align="center">
+  
+  <br><br>
+  <br><br>
+  <br><br>
+
+<!--   
+<div class = "addv_5">
+
+  <iframe src="//approachconducted.com/watchnew?key=c29fcdc3f64fa09a1645baf5381d1db3" 
+  width="160" height="600" frameborder="0" scrolling="no">
+
+  </iframe>
+
+</div> 
+
+<div class = "addv_6">
+
+  <iframe src="//approachconducted.com/watchnew?key=78a6e9d8c53e2a12084ee68774d03b10" 
+  width="160" height="600" frameborder="0" scrolling="no"></iframe>
+
+  </iframe>
+
+</div> 
+
+<div class = "addv_7">
+
+  <iframe src="//approachconducted.com/watchnew?key=c41eccbc95b8f7385b3be7f65a414909" 
+  width="160" height="600" frameborder="0" scrolling="no"></iframe>
+
+  </iframe>
+
+</div> 
+
+<div class = "addv_8">
+
+  <iframe src="//approachconducted.com/watchnew?key=9393450911d254647752f9108f1fd9f8" 
+  width="160" height="600" frameborder="0" scrolling="no"></iframe>
+
+  </iframe>
+
+</div>  -->
+
+
+    <div id="drop_area" style="padding:100px; border: 1px solid black">
+
+        <h1 align="center">This is the Synthetic Audiobook Download page </h1>
+
+    </div>
+
+</div>
+
+
+<div class="loading-bar-area" id="loading-bar-area">
+
+  <br><br>
+  <br><br>
+  <br><br>
+
+  <div id="drop_area_1" style="padding:50px; border: 1px solid black">
+
+      <h1 align="center"> Please wait your Audiobook with a custom voice is being Synthesized </h1>
+
+  </div>    
+
+    {% include 'main/Loading_pages/Synth_loader.html' %}
+
+</div>
+
+
+
+{% if task_id %}
+
+    <!--<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>-->
+    <script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+    </script>
+
+
+    <script type="text/javascript">
+
+      var taskid = "{{task_id}}";
+      console.log(taskid);
+
+      Task_tracker(taskid);
+
+      function Task_tracker(taskid)
+      {
+        var TaskID = taskid;
+        console.log("Ajax passed ", TaskID);
+
+        jQuery.ajax({
+
+
+        url: "/Synth_processing/",
+        data: {"taskid": TaskID},
+        method: "GET",
+        dataType: "json",
+        success: function(data){ console.log(
+          data['state'],
+          data["result"],
+          data["state_binary"],
+          data["state"] == "finished",
+          data['redir']);
+
+
+          if (data["state"] == "started"){
+            console.log('Task is started')};
+
+          if (data["state"] != "finished"){
+              console.log('Task has not finished')};
+
+          if (data["state_binary"]){
+            $('#loading-bar-area').remove();
+            $('#navbar_full').show();
+            $('#result-content').show();
+            console.log("data finishing over ", data);
+            console.log("data redirect ", data["redir"]);
+            location.replace(data["redir"]);
+            return data;
+
+          }
+
+        }
+
+      });
+
+    };
+
+    </script>
+
+
+
+{% endif %}
+
+
+
+
+
+
+{% endblock %}

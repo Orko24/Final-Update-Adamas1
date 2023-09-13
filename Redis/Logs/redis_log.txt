@@ -1,0 +1,15 @@
+[22580] 03 Nov 13:54:49.021 * Redis 3.0.504 (00000000/0) 64 bit, standalone mode, port 6379, pid 22580 ready to start.
+[22580] 03 Nov 13:54:49.027 # Server started, Redis version 3.0.504
+[22580] 03 Nov 13:54:49.028 * The server is now ready to accept connections on port 6379
+[22580] 03 Nov 13:56:52.264 # User requested shutdown...
+[22580] 03 Nov 13:56:52.266 * Saving the final RDB snapshot before exiting.
+[22580] 03 Nov 13:56:52.272 * DB saved on disk
+[22580] 03 Nov 13:56:52.275 # Redis is now ready to exit, bye bye...
+[6272] 03 Nov 14:35:48.977 * Redis 3.0.504 (00000000/0) 64 bit, standalone mode, port 6379, pid 6272 ready to start.
+[6272] 03 Nov 14:35:48.979 # Server started, Redis version 3.0.504
+[6272] 03 Nov 14:35:48.982 * DB loaded from disk: 0.002 seconds
+[6272] 03 Nov 14:35:48.984 * The server is now ready to accept connections on port 6379
+[6272] 03 Nov 14:41:45.847 # User requested shutdown...
+[6272] 03 Nov 14:41:45.850 * Saving the final RDB snapshot before exiting.
+[6272] 03 Nov 14:41:45.860 * DB saved on disk
+[6272] 03 Nov 14:41:45.861 # Redis is now ready to exit, bye bye...

@@ -1,0 +1,108 @@
+Resource list:
+
+Github apache tutorial: https://github.com/Johnnyboycurtis/webproject
+Git LHS_repository: https://git-lfs.github.com/
+
+Opera browswer: https://www.opera.com/
+Git bash: https://gitforwindows.org/ 
+Github CLI: https://cli.github.com/ 
+Apache Lounge: https://www.apachelounge.com/download/ 
+VS code: https://code.visualstudio.com/download 
+Python 3.9.0: https://www.python.org/downloads/release/python-390/ 
+Visual Studio 2022: https://visualstudio.microsoft.com/downloads/ 
+Redis Release: https://github.com/MicrosoftArchive/redis/releases/ 
+virtualenv: https://www.geeksforgeeks.org/creating-python-virtual-environment-windows-linux/ 
+virtualenv_documention: https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/ 
+
+Push code to github: https://circleci.com/blog/pushing-a-project-to-github/?utm_source=google&utm_medium=sem&utm_campaign=sem-google-dg--uscan-en-dsa-maxConv-auth-brand&utm_term=g_-_c__dsa_&utm_content=&gclid=Cj0KCQiA37KbBhDgARIsAIzce17degg3h79pgy0GIohDZ5LOCmJtvC3rcpdHHiIANp79ONivDHdKCKUaAkwrEALw_wcB 
+Push django code to github: https://www.javatpoint.com/django-deploy-on-github 
+
+python manage.py collectstatic
+
+Github Large Files: https://git-lfs.github.com/ 
+Github gitignore gen: https://github.com/generate/generate-gitignore 
+
+Anaconda virtual environment: https://www.anaconda.com/products/distribution?gclid=EAIaIQobChMIx6PtvdGn-wIVIRh9Ch0eXwbAEAAYASACEgJhh_D_BwE 
+
+Anaconda virtual env_commands: https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html 
+
+
+Enable goddam volume on the server so FFMPEG and Audio work: 
+
+https://www.vultr.com/docs/enable-windows-audio-on-a-windows-server-instance/
+
+Follow these steps to enable the audio service from the graphical user interface.
+
+1) Connect to your server with Remote Desktop (RDP).
+
+2) Press WIN R keys to open the Run window.
+
+3) Type services.msc and the Run window and type ENTER.
+
+4) Double-click the Windows Audio service to open the properties dialog.
+
+5) Change the Startup type to Automatic.
+
+6) Click Start to start the service now.
+
+
+Dev notes moviepy: moviepy --pre --upgrade
+
+
+how to fix encoding issue on windows
+PYTHONHOME = "C:\Anaconda3"
+run httpd.exe
+enable Apache on minsc from above 
+
+
+
+APACHE NOTES: 
+
+First you'll need to install Anaconda twice and not use a virtual environment
+One for path and then delete and install it again for all users
+
+Next you'll want these configurations once you have mod_wsgi installed on conda environment, 
+if you can get a virtual env up and running, excellent, if not don't sweat it
+
+# ServerName localhost:80 # use this if you're running this on a VirtualBox VM or PC
+ServerName 34.168.205.145:80 <--- Replace with server www.adamasaudio.com
+
+LoadFile "C:/Anaconda3/python39.dll"
+LoadModule wsgi_module "C:/Anaconda3/lib/site-packages/mod_wsgi/server/mod_wsgi.cp39-win_amd64.pyd"
+WSGIPythonHome "C:/Anaconda3"
+
+<VirtualHost *:80>
+
+    # Django Project
+
+    Alias /static "C:/Adamas_final/main/static/"
+    <Directory "C:/Adamas_final/main/static/">
+        Require all granted
+    </Directory>
+
+
+
+    WSGIScriptAlias / "C:/Adamas_final/mysite/wsgi.py"
+    <Directory "C:/Adamas_final/mysite">
+        <Files "wsgi.py">
+                Require all granted
+        </Files>
+    </Directory>
+
+</VirtualHost>
+
+
+Enable port 80:
+
+Windows Firewall defender
+Advance Settings 
+Inbound Rules
+New Rules
+Port
+80
+Allow Connection
+Click till finish
+
+
+Order SSL certificate 
+Create https binding in apache after I order it
