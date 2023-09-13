@@ -862,18 +862,30 @@ class audio_combiner(object):
         '''Try to merge the clips instead'''
 
 
-        clips = [AudioFileClip(c) for c in audio_clip_paths]
+        # clips = [AudioFileClip(c) for c in audio_clip_paths]
         # extend out the logic
+
+        clips = []
+
+        for c in audio_clip_paths:
+            print(c)
+            clips.append(AudioFileClip(c))
+
+        print(output_path)
 
         final_clip = concatenate_audioclips(clips)
         final_clip.write_audiofile(output_path)
 
         '''
         testing piece code
-        
+        print out golang and cpp commands
         '''
 
+        # audio_integatrator
+
         print(audio_merger)
+
+        print(audio_merger.vertical_integrator_API.solution_commands)
 
         # print(output_path)
         #
